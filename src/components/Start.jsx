@@ -1,13 +1,14 @@
 import React from 'react'
 import styled from "styled-components"
+import { Button } from '../styled/Buttons'
 
-const Start = () => {
+const Start = ({toggle}) => {
   return (
     <Container>
-        <img src="\images\dices.png" alt="dice logo" />
-        <div>
+        <div><img src="\images\dices.png" alt="dice logo" /></div>
+        <div className='content'>
             <h1>DICE GAME</h1>
-            <Button>Play now</Button>
+            <Button onClick={toggle}>Play now</Button>
         </div>
     </Container>
   )
@@ -17,16 +18,13 @@ export default Start
 
 const Container = styled.div`
     max-width: 1180px;
-    
-
-`;
-const Button = styled.button`
+    height: 100vh;
+    display: flex;
+    margin: 0 auto;
     align-items: center;
-    padding: 10px 10px;
-    background-color: #000000;
-    border-radius: 5px;
-    color: white;
-    width: 220px;
-    border: none;
 
-`
+  .content >h1{
+    font-size: 96px;
+    white-space: nowrap;
+  }
+`;
